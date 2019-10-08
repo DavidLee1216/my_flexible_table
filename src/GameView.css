@@ -1,0 +1,27 @@
+div .GameView{
+    display: flex;
+    justify-content: center;
+ /*   align-items: center;
+    position: relative;
+    background: rgb(50, 250, 100);*/
+    border: 3x solid blue;
+    width: 50%;
+    height: 50%;
+}
+.tileMatrix{
+    display: table;
+    width: 50%;
+}
+.tileRow{
+    display: table-row;
+}
+.tileCell{
+    background: rgb(199, 245, 214);
+    display: table-cell;
+    border: 1px solid red;
+    height: 50px;
+    width: 50px;
+}
+.tileCell:hover{
+    background: rgb(255, 255, 0);
+}
