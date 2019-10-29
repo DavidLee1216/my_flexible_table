@@ -1,0 +1,12 @@
+div.UserManagerView{
+    margin: 1em;
+}
+
+.UserManagerView >label{
+    margin: 2em;
+    color: #ffffff
+}
+
+.UserManagerView >button{
+    margin: 1em;
+}
