@@ -1,5 +1,7 @@
 import React from "react";
 import './table.css';
+import {newUserGame} from './actions';
+import { connect } from "react-redux";
 
 const tableItems = {"name":"NAME", "job":"JOB", "age":"AGE", "addr":"ADDRESS", "speciality":"SKILL"};
 
@@ -13,6 +15,7 @@ class PersonItem extends React.Component {
     }
     handleClick = () => {
         this.setState({selected:true});
+//        newUserGame(this.props.person.name);
         this.props.clickHandler(this.props.person.idx);
     }
     render(){
@@ -28,6 +31,21 @@ class PersonItem extends React.Component {
     }
 
 }
+/*
+const mapStateToProps = (state, ownProps) => ({
+    person: ownProps.person,
+    clickHandler: (idx) => ownProps.clickHandler(idx)
+})
+
+const mapDispatchToProps = (dispatch) => ({
+    newUserGame: (name) => dispatch(newUserGame(name)),
+})
+
+const PersonItem = connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(PersonItemShow)
+*/
 class PersonItemList extends React.Component{
     constructor(props){
         super(props);

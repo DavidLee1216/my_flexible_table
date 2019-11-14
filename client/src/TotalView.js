@@ -3,6 +3,12 @@ import GameView from './GameView' ;
 import UserManagerView from './UserManagerView';
 import $ from 'jquery'
 import axios from 'axios';
+import {Provider} from 'react-redux'
+import {createStore} from 'redux'
+import todos from './actions/reducer'
+import { devToolsEnhancer } from 'redux-devtools-extension'
+
+export const store = createStore(todos, devToolsEnhancer())//
 
 class TotalView extends React.Component{
     username = "";
@@ -29,8 +35,10 @@ class TotalView extends React.Component{
     render(){
         return (
             <div className="totalView">
+            <Provider store={store}>
             <UserManagerView username={this.username} changeNameHandler={this.handleChangeName}/>
-            <GameView username={this.state.username}/>
+                <GameView username={this.state.username}/>
+            </Provider>
             </div>
         )
      }
